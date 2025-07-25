@@ -1,14 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Bulk URL Shortener</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Bulk URL Shortener - Quickly shorten multiple URLs at once with our reliable and easy-to-use service." />
+    <meta name="keywords" content="URL shortener, bulk URL shortening, short links, free url shortener" />
+    <meta name="author" content="YourName or YourCompany" />
+    <title>Bulk URL Shortener | Easy & Fast URL Shortening</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
 </head>
 <body>
-    <h2>Bulk URL Shortener</h2>
-    <form method="POST">
-        <textarea name="urls" rows="12" cols="60" placeholder="Paste multiple URLs, each on a new line" required></textarea>
-        <br><br>
-        <button type="submit">Shorten URLs</button>
-    </form>
+    <header class="header">
+        <h1>Bulk URL Shortener</h1>
+        <p class="subtitle">Paste multiple URLs and shorten them instantly!</p>
+    </header>
+    <main>
+        <form method="POST" class="shorten-form" aria-label="Bulk URL Shortener Form">
+            <label for="urls" class="sr-only">Paste URLs here</label>
+            <textarea id="urls" name="urls" rows="12" placeholder="Paste multiple URLs, each on a new line..." required aria-required="true"></textarea>
+            <button type="submit" class="btn-primary">Shorten URLs</button>
+        </form>
+    </main>
+    <footer class="footer">
+        <p>© {{ current_year }} Bulk URL Shortener. Built with Flask.</p>
+    </footer>
 </body>
 </html>
