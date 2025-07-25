@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shortened Results</title>
+</head>
+<body>
+    <h2>Your Shortened URLs</h2>
+    <table border="1">
+        <tr>
+            <th>Original URL</th>
+            <th>Short URL</th>
+        </tr>
+        {% for r in results %}
+        <tr>
+            <td>{{ r.original }}</td>
+            <td><a href="{{ r.short }}" target="_blank">{{ r.short }}</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br><a href="{{ url_for('index') }}">Shorten more</a>
+</body>
+</html>
